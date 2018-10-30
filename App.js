@@ -1,55 +1,30 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import { StatusBar } from "react-native";
+import { SafeAreaView } from "react-native";
 import { StackNavigator } from "react-navigation";
-// import Tabchild from "./src/screens/tabchild/Tabchild"
-import Tabparrent from "./src/screens/tabParrent/TabParrent"
-import Screen2 from"./src/screens/tabchild/Screen2/Screen2"
-import Detail1 from "./src/screens/tabchild/Screen1/Detail1"
-import Splash from "./src/screens/Splash"
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import TabFull from "./src/TabFull"
+import GeneralNews from "./src/screens/GeneralNews";
 
-// const Tab = StackNavigator({
-//   Main: {
-//     screen: Tabparrent
-//   }
-// },{
-//   // mode:'none',
-// })
+let routeConfigs = {
+  TabFull: {
+    screen: TabFull
+  },
+  GeneralNews: {
+    screen: GeneralNews
+  }
+};
+let tabNavigationOptions = {
+  initiaRouteName: 'TabFull',
+  headerMode: 'none'
+};
 
-const AppNavigator = StackNavigator({
-  Splash: {
-    screen: Splash
-  },
-  Tabparrent: {
-    screen: Tabparrent
-  },
-  Detail1: {
-    screen: Detail1
-  },
-}, {
-    initialRouteName: 'Splash',
-    headerMode:'none'
-  })
+const AppNavigation = StackNavigator(routeConfigs, tabNavigationOptions);
+
 export default class App extends Component {
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor:'green' }}>
-        <StatusBar hidden />
-        <AppNavigator />
-      </View>
-
+      <SafeAreaView style={{ flex: 1 }}>
+        <AppNavigation />
+      </SafeAreaView >
     );
   }
 }
-

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-export default class componentName extends Component {
+export default class InfoScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,8 +10,12 @@ export default class componentName extends Component {
 
   render() {
     return (
-      <View>
-        <Text> detail1 </Text>
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <Text> This is Info Screen </Text>
       </View>
     );
   }

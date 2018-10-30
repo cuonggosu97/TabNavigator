@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-export default class componentName extends Component {
+export default class SettingsScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,8 +10,12 @@ export default class componentName extends Component {
 
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <Text> This is Settings Component </Text>
       </View>
     );
   }
